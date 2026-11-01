@@ -4,7 +4,7 @@ import SwiftUI
 /// Форматирование сумм на часах: `1 250 TJS`.
 nonisolated enum WatchFormat {
     static let locale = Locale(identifier: "ru_RU")
-    static let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Hisob"
+    static let appName = Bundle.main.object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ?? "Financy"
 
     static func amount(_ value: Decimal, currency: String) -> String {
         "\(number(value)) \(currency)"

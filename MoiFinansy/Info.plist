@@ -25,7 +25,7 @@
 			<string>tj.khalid.hisob</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>hisob</string>
+				<string>financy</string>
 			</array>
 		</dict>
 	</array>

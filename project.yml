@@ -33,7 +33,7 @@ targets:
         AppDisplayName: "$(APP_DISPLAY_NAME)"
         CFBundleURLTypes:
           - CFBundleURLName: tj.khalid.hisob
-            CFBundleURLSchemes: [hisob]
+            CFBundleURLSchemes: [financy]
         UIAppFonts: [AmiriQuran-Regular.ttf, CormorantGaramond-VF.ttf, Lora-VF.ttf, NotoNaskhArabic-VF.ttf, PTSerif-Bold.ttf, PTSerif-Regular.ttf, PlayfairDisplay-VF.ttf, ScheherazadeNew-Bold.ttf, ScheherazadeNew-Regular.ttf]
     entitlements:
       path: MoiFinansy/MoiFinansy.entitlements

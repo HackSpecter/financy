@@ -230,7 +230,7 @@ struct AyahWidgetView: View {
 
     var body: some View {
         content
-            .widgetURL(entry.pick.flatMap { URL(string: "hisob://ayah?i=\($0.index)") })
+            .widgetURL(entry.pick.flatMap { URL(string: "financy://ayah?i=\($0.index)") })
     }
 
     @ViewBuilder
