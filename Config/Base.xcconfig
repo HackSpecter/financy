@@ -1,0 +1,3 @@
+// Общие настройки. Своё имя приложения и команда подписи — в локальном Config/Local.xcconfig (не в git).
+APP_DISPLAY_NAME = Financy
+#include? "Local.xcconfig"

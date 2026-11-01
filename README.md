@@ -1,4 +1,4 @@
-# Khalid Finance
+# Financy
 
 Personal finance and daily planner for iPhone: SMS auto-import, reports, savings, debts,
 widgets and Apple Watch. Native Swift 6 / SwiftUI, no third-party libraries, no server —
@@ -36,8 +36,8 @@ Screenshots use generated demo data.
 
 ```bash
 brew install xcodegen
-git clone https://github.com/HackSpecter/khalid-finance.git
-cd khalid-finance
+git clone https://github.com/HackSpecter/financy.git
+cd financy
 xcodegen generate
 open MoiFinansy.xcodeproj
 ```
@@ -52,7 +52,7 @@ open MoiFinansy.xcodeproj
 ## Установка на iPhone
 
 1. Включите на iPhone режим разработчика: «Настройки → Конфиденциальность и безопасность → Режим разработчика».
-2. Укажите свою команду Apple Developer:
+2. Укажите свою команду Apple Developer и, если хотите, своё имя приложения:
    ```bash
    cp Config/Local.xcconfig.example Config/Local.xcconfig
    ```
@@ -67,8 +67,10 @@ iOS не даёт приложениям читать SMS, поэтому их �
 
 1. **Команды → Автоматизация → «+» → Сообщение**. Укажите «Сообщение содержит» и последние цифры своей карты.
 2. Выберите **«Выполнять сразу»**.
-3. Добавьте действие **Khalid Finance → «Обработать SMS банка»**, в поле текста выберите **«Входные данные команды»**.
+3. Добавьте действие **Financy → «Обработать SMS банка»**, в поле текста выберите **«Входные данные команды»**.
 4. Добавьте карту: **Настройки → SMS банков → Мои карты**.
+
+Текст SMS приходит из «Команд» без подтверждения подлинности, поэтому чужое SMS с номером вашей карты может создать операцию или изменить баланс. Надёжнее указать в автоматизации отправителя-банк, если iOS это позволяет.
 
 Встроенные правила банков приблизительные. Для другого формата есть «Обучить парсер».
 
@@ -77,7 +79,7 @@ iOS не даёт приложениям читать SMS, поэтому их �
 ```
 MoiFinansy/       приложение: App, Models, Services, Components, Features, Quran, Resources
 Widgets/          виджеты, Live Activity, Пункт управления
-ShareExtension/   «Поделиться → Добавить в Khalid Finance»
+ShareExtension/   «Поделиться → Добавить в Financy»
 Watch/            приложение для Apple Watch и комплекшн
 MoiFinansyTests/  unit-тесты (Swift Testing)
 tools/            сборка данных Корана из файлов Tanzil
