@@ -48,7 +48,10 @@ enum SMSImportService {
         let outcome = BankSMSParser.parse(text, sender: sender, rules: enabledRules(in: context), baseCurrency: SharedDefaults.currencyCode)
         let parsed: BankSMSParser.Parsed
         switch outcome {
-        case .ignored(let reason): return finish(.ignored, reason)
+        case .ignored(let reason):
+            // Коды подтверждения и реклама не хранятся: остаётся только причина.
+            log.text = ""
+            return finish(.ignored, reason)
         case .unrecognized(let reason): return finish(.unrecognized, reason)
         case .transaction(let value): parsed = value
         }
@@ -69,6 +72,10 @@ enum SMSImportService {
                 return finish(.unknownCard, "Карта •\(last4) не отслеживается — добавьте её в настройках SMS")
             }
         } else {
+            // Нет номера карты: при «только мои карты» такое SMS не меняет счета.
+            if onlyKnownCards, !cards.isEmpty {
+                return finish(.unknownCard, "В SMS нет номера карты — операция не записана")
+            }
             let active = cards.filter(\.isActive)
             card = active.count == 1 ? active.first : nil
         }

@@ -129,7 +129,15 @@ struct SMSImportServiceTests {
 
     @Test func confirmationCodeIsIgnored() {
         let result = SMSImportService.process(text: "Код подтверждения 4821 для оплаты 45 TJS", in: context)
-        #expect(result.log.status == .ignored)
+        #expect(result.log.status == .ignored)        // Текст с кодом не сохраняется.
+        #expect(result.log.text.isEmpty)
+    }
+
+    @Test func smsWithoutCardDoesNotChangeAccounts() throws {
+        let result = SMSImportService.process(text: "Списание 500 TJS. Остаток 1 TJS", in: context)
+        #expect(result.log.status == .unknownCard)
+        #expect(result.transaction == nil)
+        #expect(try context.fetch(FetchDescriptor<Transaction>()).isEmpty)
     }
 }
 

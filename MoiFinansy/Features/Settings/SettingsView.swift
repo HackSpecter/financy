@@ -72,9 +72,9 @@ struct SettingsView: View {
                 Section {
                     Toggle("Блокировка \(BiometricService.biometryName)", isOn: faceIDBinding)
                         .disabled(!BiometricService.isAvailable)
-                    Toggle("Режим приватности", isOn: $settings.privacyEnabled)
+                    Toggle("Режим приватности", isOn: privacyBinding(\.privacyEnabled))
                     if settings.privacyEnabled {
-                        Toggle("Показывать суммы по \(BiometricService.biometryName)", isOn: $settings.privacyRequiresFaceID)
+                        Toggle("Показывать суммы по \(BiometricService.biometryName)", isOn: privacyBinding(\.privacyRequiresFaceID))
                     }
                 } header: {
                     Text("Безопасность")
@@ -155,6 +155,24 @@ struct SettingsView: View {
                 Task {
                     if await BiometricService.authenticate(reason: "Подтвердите изменение блокировки") {
                         settings.faceIDEnabled = newValue
+                    }
+                }
+            }
+        )
+    }
+
+    /// Ослабить защиту сумм можно только после Face ID, если он сейчас требуется.
+    private func privacyBinding(_ keyPath: ReferenceWritableKeyPath<AppSettings, Bool>) -> Binding<Bool> {
+        Binding(
+            get: { settings[keyPath: keyPath] },
+            set: { newValue in
+                guard !newValue, settings.privacyEnabled, settings.privacyRequiresFaceID else {
+                    settings[keyPath: keyPath] = newValue
+                    return
+                }
+                Task {
+                    if await BiometricService.authenticate(reason: "Подтвердите отключение защиты сумм") {
+                        settings[keyPath: keyPath] = newValue
                     }
                 }
             }

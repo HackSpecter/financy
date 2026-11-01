@@ -129,10 +129,10 @@ struct ImportLogDetailView: View {
             }
 
             Section {
-                if log.status == .unknownCard {
+                if log.status == .unknownCard, !log.cardLast4.isEmpty {
                     Button("Добавить карту •\(log.cardLast4)", systemImage: "creditcard.fill") { addsCard = true }
                 }
-                if log.transaction == nil, [.unknownCard, .unrecognized, .duplicate, .ignored].contains(log.status) {
+                if log.transaction == nil, [.unknownCard, .unrecognized, .duplicate].contains(log.status) {
                     Button("Разобрать ещё раз", systemImage: "arrow.clockwise") { reprocess() }
                 }
                 Button("Удалить запись\(log.transaction != nil ? " и операцию" : "")", systemImage: "trash", role: .destructive) {
