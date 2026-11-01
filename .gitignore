@@ -1,0 +1,13 @@
+# Сборка
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+
+# Проект генерируется из project.yml (XcodeGen)
+*.xcodeproj/
+.project-nowatch.yml
+
+# Локальные настройки подписи
+Config/Local.xcconfig
