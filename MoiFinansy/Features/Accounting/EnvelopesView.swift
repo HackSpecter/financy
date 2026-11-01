@@ -20,7 +20,7 @@ struct EnvelopesView: View {
             Section {
                 Toggle("Метод конвертов", isOn: $isEnabled)
             } footer: {
-                Text("В день зарплаты Khalid Finance предложит разложить её по конвертам. Траты категорий конверта уменьшают его остаток.")
+                Text("В день зарплаты \(AppInfo.name) предложит разложить её по конвертам. Траты категорий конверта уменьшают его остаток.")
             }
             if isEnabled {
                 Section {

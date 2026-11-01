@@ -63,7 +63,7 @@ struct ReceiptScannerView: View {
                     }
                 } else {
                     Section {
-                        EmptyStateView(title: "Сканер чеков", symbol: "doc.text.viewfinder", message: "Сфотографируйте чек — Khalid Finance найдёт сумму, магазин и дату и прикрепит фото к операции.")
+                        EmptyStateView(title: "Сканер чеков", symbol: "doc.text.viewfinder", message: "Сфотографируйте чек — \(AppInfo.name) найдёт сумму, магазин и дату и прикрепит фото к операции.")
                     }
                     .listRowBackground(Color.clear)
                 }

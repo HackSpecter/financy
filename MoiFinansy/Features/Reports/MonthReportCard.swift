@@ -9,7 +9,7 @@ struct MonthReportCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Khalid Finance · отчёт").font(.caption.weight(.semibold)).foregroundStyle(.white.opacity(0.8))
+                Text("\(AppInfo.name) · отчёт").font(.caption.weight(.semibold)).foregroundStyle(.white.opacity(0.8))
                 Text(title).font(.largeTitle.bold()).foregroundStyle(.white)
             }
             HStack(spacing: 24) {

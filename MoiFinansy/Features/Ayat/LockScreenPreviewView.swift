@@ -93,8 +93,8 @@ struct HowToAddAyahView: View {
     private let steps: [(String, String)] = [
         ("lock.iphone", "Заблокируйте iPhone и нажмите на экран блокировки с удержанием."),
         ("slider.horizontal.3", "Нажмите «Настроить» → «Экран блокировки»."),
-        ("textformat.size.smaller", "Нажмите на дату над часами → выберите Khalid Finance → «Сура»."),
-        ("plus.rectangle.on.rectangle", "Нажмите на поле под часами → Khalid Finance → сначала «Аят», затем «Сегодня можно» — он встанет справа."),
+        ("textformat.size.smaller", "Нажмите на дату над часами → выберите \(AppInfo.name) → «Сура»."),
+        ("plus.rectangle.on.rectangle", "Нажмите на поле под часами → \(AppInfo.name) → сначала «Аят», затем «Сегодня можно» — он встанет справа."),
         ("checkmark.circle", "Нажмите «Готово». Сура, аят и сумма обновляются каждую минуту вместе с часами."),
     ]
 

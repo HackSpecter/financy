@@ -44,7 +44,7 @@ private struct AllowancePage: View {
                     .font(.caption2)
                     .foregroundStyle(color)
             } else {
-                Text("Откройте Khalid Finance на iPhone, чтобы задать бюджет").font(.footnote).multilineTextAlignment(.center)
+                Text("Откройте \(WatchFormat.appName) на iPhone, чтобы задать бюджет").font(.footnote).multilineTextAlignment(.center)
             }
             Button(action: onAdd) {
                 Label("Расход", systemImage: "plus")

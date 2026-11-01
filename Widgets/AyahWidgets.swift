@@ -230,7 +230,7 @@ struct AyahWidgetView: View {
 
     var body: some View {
         content
-            .widgetURL(entry.pick.flatMap { URL(string: "khalidfinance://ayah?i=\($0.index)") })
+            .widgetURL(entry.pick.flatMap { URL(string: "hisob://ayah?i=\($0.index)") })
     }
 
     @ViewBuilder
@@ -247,7 +247,7 @@ struct AyahWidgetView: View {
                     .padding(8)
             }
         } else {
-            Text("Откройте Khalid Finance один раз, чтобы загрузить аяты")
+            Text("Откройте \(AppInfo.name) один раз, чтобы загрузить аяты")
                 .font(.caption)
                 .multilineTextAlignment(.center)
         }

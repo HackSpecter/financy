@@ -208,7 +208,7 @@ struct SettingsView: View {
             defer { if access { url.stopAccessingSecurityScopedResource() } }
             pendingImport = try BackupService.decode(Data(contentsOf: url))
         } catch {
-            message = "Файл не похож на резервную копию Khalid Finance"
+            message = "Файл не похож на резервную копию \(AppInfo.name)"
         }
     }
 

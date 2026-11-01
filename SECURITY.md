@@ -1,7 +1,7 @@
 # Security
 
 Please do not report vulnerabilities in public issues. Use
-[private vulnerability reporting](https://github.com/HackSpecter/khalid-finance/security/advisories/new).
+[private vulnerability reporting](https://github.com/HackSpecter/hisob/security/advisories/new).
 
 Do not attach real bank SMS, card numbers or backups. Replace them with made-up values.
 

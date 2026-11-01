@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-/// Дизайн-система Khalid Finance: системные фоны, белые карточки и зелёный акцент.
+/// Дизайн-система приложения: системные фоны, белые карточки и зелёный акцент.
 enum Theme {
     /// Фон экранов — системный (светло-серый днём, чёрный ночью).
     static let background = Color(.systemGroupedBackground)

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppDisplayName</key>
+	<string>$(APP_DISPLAY_NAME)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -23,7 +25,7 @@
 			<string>tj.khalid.hisob</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>khalidfinance</string>
+				<string>hisob</string>
 			</array>
 		</dict>
 	</array>

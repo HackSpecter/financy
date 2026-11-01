@@ -15,7 +15,7 @@ enum NotificationService {
     static func scheduleDailyReminder(minutes: Int) async {
         center.removePendingNotificationRequests(withIdentifiers: [dailyReminderID])
         let content = UNMutableNotificationContent()
-        content.title = "Khalid Finance"
+        content.title = "\(AppInfo.name)"
         content.body = "Внеси расходы за сегодня — это займёт 10 секунд"
         content.sound = .default
         var components = DateComponents()

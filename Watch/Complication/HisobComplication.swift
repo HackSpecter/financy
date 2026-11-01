@@ -73,7 +73,7 @@ struct AllowanceComplicationView: View {
         case .accessoryCorner:
             Text(left)
                 .font(.system(.title3, design: .rounded).bold())
-                .widgetLabel { Gauge(value: 1 - progress) { Text("Khalid Finance") }.tint(WatchFormat.statusColor(snapshot.statusRaw)) }
+                .widgetLabel { Gauge(value: 1 - progress) { Text(WatchFormat.appName) }.tint(WatchFormat.statusColor(snapshot.statusRaw)) }
         default:
             Gauge(value: 1 - progress) {
                 Image(systemName: "creditcard")

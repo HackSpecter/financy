@@ -17,7 +17,7 @@ enum BiometricService {
         LAContext().canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
     }
 
-    static func authenticate(reason: String = "Разблокируйте Khalid Finance") async -> Bool {
+    static func authenticate(reason: String = "Разблокируйте \(AppInfo.name)") async -> Bool {
         let context = LAContext()
         context.localizedCancelTitle = "Отмена"
         do {

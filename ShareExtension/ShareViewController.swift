@@ -2,7 +2,7 @@ import SwiftData
 import SwiftUI
 import UIKit
 
-/// Точка входа «Поделиться → Добавить в Khalid Finance».
+/// Точка входа «Поделиться → Добавить в приложение».
 final class ShareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()

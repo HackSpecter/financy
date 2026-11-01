@@ -30,9 +30,10 @@ targets:
     info:
       path: MoiFinansy/Info.plist
       properties:
+        AppDisplayName: "$(APP_DISPLAY_NAME)"
         CFBundleURLTypes:
           - CFBundleURLName: tj.khalid.hisob
-            CFBundleURLSchemes: [khalidfinance]
+            CFBundleURLSchemes: [hisob]
         UIAppFonts: [AmiriQuran-Regular.ttf, CormorantGaramond-VF.ttf, Lora-VF.ttf, NotoNaskhArabic-VF.ttf, PTSerif-Bold.ttf, PTSerif-Regular.ttf, PlayfairDisplay-VF.ttf, ScheherazadeNew-Bold.ttf, ScheherazadeNew-Regular.ttf]
     entitlements:
       path: MoiFinansy/MoiFinansy.entitlements
@@ -46,7 +47,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: tj.khalid.hisob
         PRODUCT_NAME: MoiFinansy
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: "Khalid Finance"
+        INFOPLIST_KEY_CFBundleDisplayName: "$(APP_DISPLAY_NAME)"
         INFOPLIST_KEY_NSFaceIDUsageDescription: "Face ID защищает ваши финансовые данные."
         INFOPLIST_KEY_NSCameraUsageDescription: "Камера нужна, чтобы сканировать чеки."
         INFOPLIST_KEY_NSSupportsLiveActivities: YES
@@ -85,7 +86,8 @@ targets:
     info:
       path: Widgets/Info.plist
       properties:
-        CFBundleDisplayName: "Khalid Finance"
+        CFBundleDisplayName: "$(APP_DISPLAY_NAME)"
+        AppDisplayName: "$(APP_DISPLAY_NAME)"
         UIAppFonts: [AmiriQuran-Regular.ttf, CormorantGaramond-VF.ttf, Lora-VF.ttf, NotoNaskhArabic-VF.ttf, PTSerif-Bold.ttf, PTSerif-Regular.ttf, PlayfairDisplay-VF.ttf, ScheherazadeNew-Bold.ttf, ScheherazadeNew-Regular.ttf]
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
@@ -113,7 +115,8 @@ targets:
     info:
       path: ShareExtension/Info.plist
       properties:
-        CFBundleDisplayName: "Добавить в Khalid Finance"
+        CFBundleDisplayName: "Добавить в $(APP_DISPLAY_NAME)"
+        AppDisplayName: "$(APP_DISPLAY_NAME)"
         NSExtension:
           NSExtensionPointIdentifier: com.apple.share-services
           NSExtensionPrincipalClass: "$(PRODUCT_MODULE_NAME).ShareViewController"
@@ -145,7 +148,7 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: tj.khalid.hisob.watchkitapp
         PRODUCT_NAME: HisobWatch
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: Khalid Finance
+        INFOPLIST_KEY_CFBundleDisplayName: "$(APP_DISPLAY_NAME)"
         INFOPLIST_KEY_WKCompanionAppBundleIdentifier: tj.khalid.hisob
         INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -169,7 +172,7 @@ targets:
     info:
       path: Watch/Complication/Info.plist
       properties:
-        CFBundleDisplayName: Khalid Finance
+        CFBundleDisplayName: "$(APP_DISPLAY_NAME)"
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     settings:

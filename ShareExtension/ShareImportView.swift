@@ -28,7 +28,7 @@ struct ShareImportView: View {
                     content(for: text)
                 }
             }
-            .navigationTitle("Добавить в Khalid Finance")
+            .navigationTitle("Добавить в \(AppInfo.name)")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Закрыть", systemImage: "xmark", action: onClose) }

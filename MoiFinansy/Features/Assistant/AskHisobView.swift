@@ -109,7 +109,7 @@ struct AskHisobView: View {
                     if messages.isEmpty {
                         VStack(alignment: .leading, spacing: 10) {
                             Label("Спросите о своих финансах", systemImage: "sparkles").font(.headline)
-                            Text("Работает на устройстве. Khalid Finance передаёт модели только итоги — суммы по месяцам и категориям.")
+                            Text("Работает на устройстве. \(AppInfo.name) передаёт модели только итоги — суммы по месяцам и категориям.")
                                 .font(.footnote).foregroundStyle(.secondary)
                             ForEach(suggestions, id: \.self) { suggestion in
                                 Button(suggestion) { ask(suggestion) }
@@ -169,7 +169,7 @@ struct AskHisobView: View {
         LanguageModelSession(
             tools: [MonthSummaryTool(), TopExpensesTool(), CompareMonthsTool(), CurrentStatusTool()],
             instructions: """
-            Ты — Khalid Finance, помощник по личным финансам. Отвечай по-русски, кратко и по делу, с конкретными суммами.
+            Ты — \(AppInfo.name), помощник по личным финансам. Отвечай по-русски, кратко и по делу, с конкретными суммами.
             Валюта — сомони (TJS). Сегодня \(Date.now.appFormatted("dMMMMyyyy")).
             Для любых цифр используй инструменты; не выдумывай данные. Если данных нет, так и скажи.
             """

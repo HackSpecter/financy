@@ -13,6 +13,6 @@ struct QuickAddControl: ControlWidget {
             }
         }
         .displayName("Добавить расход")
-        .description("Открывает быстрое добавление расхода в Khalid Finance.")
+        .description("Открывает быстрое добавление расхода.")
     }
 }

@@ -109,7 +109,7 @@ struct MonthSummaryCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Khalid Finance · месяц закрыт").font(.caption.weight(.semibold)).foregroundStyle(.white.opacity(0.8))
+                Text("\(AppInfo.name) · месяц закрыт").font(.caption.weight(.semibold)).foregroundStyle(.white.opacity(0.8))
                 Text(summary.month.appFormatted("LLLLyyyy").capitalizedFirst).font(.largeTitle.bold()).foregroundStyle(.white)
             }
             Grid(alignment: .leading, horizontalSpacing: 24, verticalSpacing: 12) {

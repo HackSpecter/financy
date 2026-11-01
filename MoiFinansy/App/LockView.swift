@@ -12,7 +12,7 @@ struct LockView: View {
                     .font(.system(size: 56))
                     .foregroundStyle(.tint)
                     .symbolEffect(.pulse)
-                Text("Khalid Finance")
+                Text("\(AppInfo.name)")
                     .font(.title.bold())
                 Button(action: onUnlock) {
                     Label("Разблокировать", systemImage: "faceid")

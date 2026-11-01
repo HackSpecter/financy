@@ -5,7 +5,7 @@ import SwiftData
 /// Работает в фоне, приложение не открывается.
 struct ProcessBankSMSIntent: AppIntent {
     static let title: LocalizedStringResource = "Обработать SMS банка"
-    static let description = IntentDescription("Разбирает SMS банка и записывает операцию в Khalid Finance.")
+    static let description = IntentDescription("Разбирает SMS банка и записывает операцию в приложение.")
     static let supportedModes: IntentModes = .background
 
     @Parameter(title: "Текст сообщения", inputConnectionBehavior: .connectToPreviousIntentResult)
@@ -28,7 +28,7 @@ struct ProcessBankSMSIntent: AppIntent {
     }
 }
 
-/// Показывает действие Khalid Finance в приложении «Команды» сразу после установки.
+/// Показывает действие приложения в приложении «Команды» сразу после установки.
 struct HisobShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(

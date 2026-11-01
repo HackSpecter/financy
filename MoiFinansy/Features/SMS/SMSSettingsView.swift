@@ -18,7 +18,7 @@ struct SMSSettingsView: View {
                     Label("Подключить SMS банка", systemImage: "wand.and.stars")
                 }
             } footer: {
-                Text("Автоматизация «Команд» передаёт каждое SMS банка в Khalid Finance — операция записывается сама.")
+                Text("Автоматизация «Команд» передаёт каждое SMS банка в \(AppInfo.name) — операция записывается сама.")
             }
 
             Section {

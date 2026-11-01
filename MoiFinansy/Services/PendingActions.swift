@@ -33,9 +33,9 @@ final class AppRouter {
     }
     var quickAddType: TransactionType = .expense
 
-    /// khalidfinance://ayah?i=6098 — из виджета «Аят».
+    /// hisob://ayah?i=6098 — из виджета «Аят».
     func open(_ url: URL) {
-        guard url.scheme == "khalidfinance", url.host() == "ayah",
+        guard url.scheme == "hisob", url.host() == "ayah",
               let value = URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.first(where: { $0.name == "i" })?.value,
               let index = Int(value) else { return }
         presentedAyah = AyahLink(index: index)

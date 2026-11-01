@@ -30,8 +30,7 @@ Playfair Display, Amiri Quran, Scheherazade New, Noto Naskh Arabic.
 
 ## Name and icon
 
-The name "Khalid Finance" and the app icon are not covered by the MIT license.
-Forks should use their own name and icon.
+The app icon is not covered by the MIT license. Forks should use their own icon.
 
 ## Not affiliated
 

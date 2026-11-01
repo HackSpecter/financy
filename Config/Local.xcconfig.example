@@ -1,2 +1,5 @@
-// Скопируйте в Config/Local.xcconfig и укажите свою команду Apple Developer.
+// Скопируйте в Config/Local.xcconfig.
+// Команда Apple Developer для сборки на устройство:
 DEVELOPMENT_TEAM = YOUR_TEAM_ID
+// Необязательно: своё имя приложения на телефоне.
+// APP_DISPLAY_NAME = My Finance

@@ -136,7 +136,7 @@ struct AyahShareCard: View {
                 .font(.system(size: 18, weight: .medium))
                 .tracking(4)
                 .opacity(0.75)
-            Text("Khalid Finance")
+            Text("\(AppInfo.name)")
                 .font(.system(size: 13, weight: .regular))
                 .opacity(0.5)
         }
