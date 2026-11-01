@@ -1,0 +1,2 @@
+// Скопируйте в Config/Local.xcconfig и укажите свою команду Apple Developer.
+DEVELOPMENT_TEAM = YOUR_TEAM_ID

@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: xcode-27
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Generate project
+        run: xcodegen generate
+      - name: Build and run unit tests
+        run: |
+          set -o pipefail
+          DEVICE=$(xcrun simctl list devices available -j | python3 -c "import json,sys; d=json.load(sys.stdin)['devices']; print(next(x['udid'] for k,v in d.items() if 'iOS' in k for x in v if x['name'].startswith('iPhone')))")
+          xcodebuild -project MoiFinansy.xcodeproj -scheme MoiFinansy \
+            -destination "platform=iOS Simulator,id=$DEVICE" \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO test 2>&1 | tee build.log
+      - name: Fail on compiler warnings
+        run: |
+          if grep -E "^/.*\.swift:[0-9]+:[0-9]+: warning:" build.log; then
+            echo "Compiler warnings found"
+            exit 1
+          fi

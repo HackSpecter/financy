@@ -1,0 +1,2 @@
+// Общие настройки. Команда подписи — только в локальном Config/Local.xcconfig (не в git).
+#include? "Local.xcconfig"
